@@ -3,6 +3,7 @@ node_modules
 
 # build artefacts
 dist
+src/_data/*_submissions.json
 
 # Local Netlify folder
 .netlify
