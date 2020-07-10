@@ -1,0 +1,19 @@
+{
+  "name": "DemoNetlifyPluginFormSubmissions",
+  "version": "0.1.0",
+  "description": "Demo Netlify Build Plugin: Form Submissions",
+  "author": "Phil Hawksworth",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philhawksworth/demo-netlify-plugin-form-submissions"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "netlify-plugin-form-submissions": "^0.1.2"
+  }
+}

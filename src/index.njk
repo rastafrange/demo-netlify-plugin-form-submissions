@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - Form submissions Netlify plugin</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="tint">
+    <header>
+      <section>
+        <h1>Form submissions plugin</h1>
+        <p class="subtitle">A little demo of a Netlify plugin</p>
+      </section>
+    </header>
+  </div>
+
+  <main>
+    <section>
+      <h2>netlify-plugin-form-submissions</h2>
+      <p>
+        A Netlify plugin to discover form submissions and fetch them from the Netlify API, making them available to the site genertaor during each build.
+      </p>
+      <p>
+        Find installation and usage guide in <a href="{{ site.pluginRepo }}">the plugin repo</a>.
+      </p>
+      <p>
+        We might use submissions to our forms in different ways in our sites. Here we just list out the data collected from the sample form below. Since this is just an example, the form is now disabled so mo additional submissins will show up here, but you could trigger all sorts of automation with form submissions and pull the data into the site with this plugin. Which is what happens in this <a href="https://jamstack-comments.netlify.app">blog comments example</a>.
+      </p>
+    </section>
+    <section>
+      <h2>Form submissions</h2>
+      <p>
+        The plugin ran before this site build, discovered all the Netlify forms in the site and pulled the submission data into json files ready for the site generator to use during the build. Here they are!
+      </p>
+      <ul>
+        {% for item in sampleform-submissions %}
+          <li>{{ item.name }}</li>
+        {% endfor %}
+
+      </ul>
+    </section>
+    <section>
+      <h2>Sample form</h2>
+      <p>
+        This form posts to Netlify Forms. You can read about how they work in the docs. It no longer triggers an automated rebuid of this site, so if you post to it your submission won't appear in the site. (But that's just becase this is an unmoderated demo)
+      </p>
+      <form action="/thanks" method="post" name="sampleform" netlify>
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Your personlaity: <select name="role[]" multiple>
+            <option value="a cat person">A cat person</option>
+            <option value="a dog person">A dog person</option>
+            <option value="neither">Neither</option>
+            <option value="why not both?">Why not both?</option>
+          </select></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+    </section>
+    <section>
+      <h2>Try this for yourself</h2>
+      <p>
+        To quickly experiment with this example, you can click the button below. Clicking the button will clone <a href="{{ pkg.repository.url }}">this test site repo</a>, setup a new site <a href="https://netlify.com">on Netlify</a> and deploy the site complete with Netlify's CI/CD pipeline configured and operational.
+      </p>
+      <p>
+        <a class="naked" href="https://app.netlify.com/start/deploy?repository={{ pkg.repository.url }}&{{ site.utm }}"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <section>
+      Made with <img class="netliheart" title="love" src="/images/netliheart.svg" alt="love" width="1em"> by the <a href="https://netlify.com">Netlify</a> team. Explore <a href="{{ pkg.repository.url }}">the code</a> in GitHub. Follow <a href="https://twitter.com/netlify">@Netliify</a> on Twitter for regular updates</a>.
+    </section>
+  </footer>
+
+</body>
+</html>
