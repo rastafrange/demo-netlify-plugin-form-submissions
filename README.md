@@ -3,7 +3,7 @@
 This site only exists to demonstrate a Netlify Build Plugin.
 
 - Learn more about the [netlify-plugin-form-submissions](https://github.com/philhawksworth/netlify-plugin-form-submissions) plugin.
-- See this example site here: https://demo-plugin-form-submissions.netlify.app
+- See this example site here: https://demo-netlify-plugin-form-submissions.netlify.app
 
 
 ## Quick try-out
