@@ -35,14 +35,13 @@
       <p>
         The plugin ran before this site build, discovered all the Netlify forms in the site and pulled the submission data into json files ready for the site generator to use during the build. Here they are!
       </p>
-      <ul>
-        {% for item in sampleform_submissions %}
+      <ul class="submissions">
+        {% for item in sampleform_submissions | reverse %}
           <li>
-            <p>Name: {{ item.data.name}}</p>
-            <div>Cat person or dog person: {{ item.data.role | join }} </div>
+            <p>{{ item.data.name}}</p>
+            <div>Cat person or dog person: <span class="type">{{ item.data.type }}</span> </div>
           </li>
         {% endfor %}
-
       </ul>
     </section>
     <section>
@@ -63,7 +62,7 @@
           </select></label>
         </p>
         <p>
-          <button type="submit">Send</button>
+          <button type="submit">Submit</button>
         </p>
       </form>
     </section>
